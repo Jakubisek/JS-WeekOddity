@@ -13,7 +13,7 @@
 
   var monday = new Date(now.getFullYear(), 0, 0);
   var d = new Date(new Date().getFullYear(), 0, 1).getDay();
-  var dayCount = Math.floor(((now - start) + ((start.getTimezoneOffset() - now.getTimezoneOffset()) * 60000)) / (86400000));
+  var dayCount = Math.floor(((now - start) + (((start.getTimezoneOffset() - now.getTimezoneOffset()) * 60000)) / (86400000)) + 1);
 
   while (monday.getDay() !== 1) 
   {
