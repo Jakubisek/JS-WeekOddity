@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <body>
+  </body>
+</html>
+<script>
+
+  // for checking custom date replace now with date
+  var now = new Date();
+
+  var start = new Date(now.getFullYear(), 0, 0);
+  var dayNum = new Date().getDay();
+
+  var monday = new Date(now.getFullYear(), 0, 0);
+  var d = new Date(new Date().getFullYear(), 0, 1).getDay();
+  var dayCount = Math.floor(((now - start) + ((start.getTimezoneOffset() - now.getTimezoneOffset()) * 60000)) / (86400000));
+
+  while (monday.getDay() !== 1) 
+  {
+    monday.setDate(monday.getDate() + 1);
+  }
+
+  var yOffset = monday.getDate() - 1
+  var weekPassed = (((dayCount - yOffset) - ((dayCount - yOffset) % 7 )) / 7) + 1
+
+  if (weekPassed % 2 == 0)
+  {document.write("even week");}
+  else
+  {document.write("odd week");}
+
+</script>
